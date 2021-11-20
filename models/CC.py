@@ -25,11 +25,11 @@ class CrowdCounter(nn.Module):
             from .SCC_Model.Res101_SFCN import Res101_SFCN as net
 
         self.CCN = net()
-        if len(gpus)>1:
-            # self.CCN = torch.nn.DataParallel(self.CCN, device_ids=gpus).cuda()
-            self.CCN = torch.nn.DataParallel(self.CCN, device_ids=[0]).cuda()
-        else:
-            self.CCN=self.CCN.cuda()
+        # if len(gpus)>1:
+        #     # self.CCN = torch.nn.DataParallel(self.CCN, device_ids=gpus).cuda()
+        #     self.CCN = torch.nn.DataParallel(self.CCN, device_ids=[0]).cuda()
+        # else:
+        self.CCN=self.CCN.cuda()
         self.loss_mse_fn = nn.MSELoss().cuda()
         
     @property
