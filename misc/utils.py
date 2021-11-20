@@ -246,6 +246,8 @@ def copy_cur_env(work_dir, dst_dir, exception):
 
 
         if os.path.isdir(file) and exception not in filename:
+            if os.path.exists(dst_file):
+                shutil.rmtree(dst_file)
             shutil.copytree(file, dst_file)
         elif os.path.isfile(file):
             shutil.copyfile(file,dst_file)
