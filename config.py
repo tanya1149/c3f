@@ -136,7 +136,7 @@ __C.VAL_FREQ = 10 # Before __C.VAL_DENSE_START epoches, the freq is set as __C.V
 #------------------------------VIS------------------------
 __C.VISIBLE_NUM_IMGS = 1 #  must be 1 for training images with the different sizes
 
-
+__C.RESUME = 0
 
 #================================================================================
 #================================================================================
