@@ -21,6 +21,7 @@ torch.backends.cudnn.benchmark = True
 #------------prepare data loader------------
 data_mode = cfg.DATASET
 if data_mode is 'SHHA':
+    print('loading from SHHA')
     from datasets.SHHA.loading_data import loading_data 
     from datasets.SHHA.setting import cfg_data 
 elif data_mode is 'SHHB':

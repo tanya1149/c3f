@@ -103,6 +103,7 @@ def loading_data():
     train_set = SHHA(cfg_data.DATA_PATH+'/train', 'train',main_transform=train_main_transform, img_transform=img_transform, gt_transform=gt_transform)
     train_loader =None
     if cfg_data.TRAIN_BATCH_SIZE==1:
+        print('training Batch size = 1 ..../')
         train_loader = DataLoader(train_set, batch_size=1, num_workers=8, shuffle=True, drop_last=True)
     elif cfg_data.TRAIN_BATCH_SIZE>1:
         train_loader = DataLoader(train_set, batch_size=cfg_data.TRAIN_BATCH_SIZE, num_workers=8, collate_fn=SHHA_collate, shuffle=True, drop_last=True)
